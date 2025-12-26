@@ -1,0 +1,24 @@
+[project]
+name = "litewolf"
+version = "0.1.0"
+description = "YouTube bot"
+authors = [ ]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi (>=0.127.1,<0.128.0)",
+    "uvicorn (>=0.40.0,<0.41.0)",
+    "jinja2 (>=3.1.6,<4.0.0)",
+    "ruff-lsp (>=0.0.62,<0.0.63)",
+    "pyright (>=1.1.407,<2.0.0)"
+
+]
+
+[tool.poetry.scripts]
+app = "litewolf.main:main"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
