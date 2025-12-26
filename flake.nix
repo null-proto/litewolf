@@ -20,8 +20,8 @@
 		devShells.${system}.default = pkgs.mkShell {
 			buildInputs = with pkgs; [
         poetry
-				nodejs
 				ruff
+				pyright
 			];
 		};
 

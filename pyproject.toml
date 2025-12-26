@@ -10,10 +10,14 @@ dependencies = [
     "fastapi (>=0.127.1,<0.128.0)",
     "uvicorn (>=0.40.0,<0.41.0)",
     "jinja2 (>=3.1.6,<4.0.0)",
-    "ruff-lsp (>=0.0.62,<0.0.63)",
-    "pyright (>=1.1.407,<2.0.0)"
+    "coloredlogs (>=15.0.1,<16.0.0)",
+    "colorlog (>=6.10.1,<7.0.0)",
 
 ]
+
+[tool.ruff]
+# indent-style = "space"
+indent-width = 2
 
 [tool.poetry.scripts]
 app = "litewolf.main:main"
