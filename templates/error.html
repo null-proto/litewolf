@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>404 - Page Not Found</title>
+	<link rel="stylesheet" href="{{ url_for('static', path='style-error.css') }}">
+</head>
+
+<body>
+	<!-- Error Content -->
+	<div class="error-container">
+		<div class="error-content">
+			<div class="error-code">{{code}}</div>
+			<h1 class="error-title">{{ message }}</h1>
+			<p class="error-message">
+				The page you're looking for doesn't exist or has been moved.
+				Check the URL or head back to home.
+			</p>
+
+			<div class="error-actions">
+				<a href="/" class="btn btn-primary">
+					← Back to Home
+				</a>
+				<a href="javascript:history.back()" class="btn btn-secondary">
+					Back
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<div class="footer-content">
+			<p>Need help? Check our <a href="/docs">documentation</a> or <a href="https://github.com">open an issue</a></p>
+		</div>
+	</footer>
+</body>
+
+</html>
