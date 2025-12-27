@@ -4,10 +4,6 @@
 	box-sizing: border-box;
 }
 
-.icon-sm path {
-  stroke: # !important;
-}
-
 
 :root {
 	--bg-primary: #0d1117;

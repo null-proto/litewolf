@@ -239,4 +239,10 @@
 	</footer>
 </body>
 
+<script>
+ if (document.cookie.split(';').some(c => c.trim().startsWith('ses-id='))) {
+    window.location.href = "/dashboard";
+}
+</script>
+
 </html>
