@@ -1,19 +1,17 @@
 import importlib.metadata
 import argparse
 import logging
-
-import litewolf.exit
 import time
 
-from litewolf.logger import logger
+from .exit import exit_hook
+from .logger import logger
 
-VERSION = "litewolf v" + importlib.metadata.version("litewolf")
 
 
 def _start(debug=False):
   logger.setLevel(logging.DEBUG if debug else logging.INFO)
 
-  litewolf.exit.exit_()
+  exit_hook()
 
   logger.debug("hello world")
   logger.info("hello world")
@@ -25,8 +23,9 @@ def _start(debug=False):
 
 def main():
   parser = argparse.ArgumentParser()
-  parser.add_argument("--debug", action="store_true")
-  parser.add_argument("--version", action="version", version=VERSION)
+  parser.usage = "\n  python -m " + __package__ +" [flags] [options]\nor:\n  poetry run app [flags] [options]" # type: ignore
+  parser.add_argument("--debug", action="store_true",help="prints debug messages")
+  parser.add_argument("-v","--version", action="version", version= __package__ + " v" + importlib.metadata.version("litewolf")) #type: ignore
 
   args = parser.parse_args()
 

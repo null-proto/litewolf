@@ -4,7 +4,7 @@ import sys
 from litewolf.logger import logger
 
 
-def exit_():
+def exit_hook():
   def handle_sigint(sig, frame):
     logger.info("CTRL+C caught, cleaning up…")
     sys.exit(0)
