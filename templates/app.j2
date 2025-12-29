@@ -1,0 +1,68 @@
+DASHBOARD_TEMPLATE = '''
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "components/app/header.j2" %}
+
+<body>
+	<!-- Navbar -->
+	{% include "components/app/navbar.j2" %}
+
+	<!-- Sidebar -->
+	{% include "components/app/sidebar.j2" %}
+
+	<!-- Main Content -->
+	<main class="main-content" id="mainContent">
+		<!-- Dashboard Page -->
+		{% include "components/app/dashboard.j2" %}
+
+		<!-- Other Pages (Placeholder) -->
+		{% include "components/app/monitor.j2" %}
+
+		{% include "components/app/settings.j2" %}
+
+	</main>
+
+	<script>
+		// Toggle sidebar
+		function toggleSidebar() {
+			const sidebar = document.getElementById('sidebar');
+			const mainContent = document.getElementById('mainContent');
+			sidebar.classList.toggle('collapsed');
+			mainContent.classList.toggle('expanded');
+		}
+
+		// Switch pages (SPA navigation)
+		function switchPage(pageName) {
+			// Hide all pages
+			document.querySelectorAll('.page-section').forEach(page => {
+				page.classList.remove('active');
+			});
+
+			// Show selected page
+			const selectedPage = document.getElementById('page-' + pageName);
+			if (selectedPage) {
+				selectedPage.classList.add('active');
+			}
+
+			// Update active sidebar item
+			document.querySelectorAll('.sidebar-item').forEach(item => {
+				item.classList.remove('active');
+			});
+			event.target.closest('.sidebar-item').classList.add('active');
+
+			// Update page title in navbar
+			const pageTitle = event.target.textContent.trim();
+			document.querySelector('.navbar-logo span:last-child').textContent = pageTitle;
+		}
+
+		// Mobile sidebar toggle
+		if (window.innerWidth <= 768) {
+			document.querySelector('.menu-toggle').addEventListener('click', function () {
+				document.getElementById('sidebar').classList.toggle('active');
+			});
+		}
+	</script>
+</body>
+
+</html>

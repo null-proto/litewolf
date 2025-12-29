@@ -18,7 +18,7 @@ srv.mount("/static", StaticFiles(directory="static"), name="static")
 @srv.exception_handler(404)
 def not_found(req: Request, exc: HTTPException):
   return templates.TemplateResponse(
-        "error.html",
+        "error.j2",
         {"request": req ,"code": 404 , "message": "Page Not Found" }
     )
 
@@ -34,21 +34,21 @@ def dash2app():
 @srv.get("/" , response_class=HTMLResponse)
 async def home(req : Request):
   return templates.TemplateResponse(
-        "home.html",
+        "home.j2",
         {"request": req }
     )
 
 @srv.get("/auth" , response_class=HTMLResponse)
 async def auth(req : Request):
   return templates.TemplateResponse(
-        "login.html",
+        "login.j2",
         {"request": req }
     )
 
 @srv.get("/new-user" , response_class=HTMLResponse)
 async def signin(req : Request):
   return templates.TemplateResponse(
-        "signin.html",
+        "signin.j2",
         {"request": req }
     )
 
@@ -56,7 +56,7 @@ async def signin(req : Request):
 async def app(req : Request):
   data = get_dashboard_data()
   return templates.TemplateResponse(
-        "app.html",
+        "app.j2",
         {"request": req, **data }
     )
 

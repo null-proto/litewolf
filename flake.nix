@@ -22,6 +22,7 @@
         poetry
 				ruff
 				pyright
+				postgresql
 			];
 		};
 

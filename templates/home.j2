@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	{% include "components/launch/header.j2" %}
+<body>
+	{% include "components/launch/nav.j2" %}
+
+	{% include "components/launch/hero.j2" %}
+
+	{% include "components/launch/features.j2" %}
+
+	{% include "components/launch/qs.j2" %}
+
+	{% include "components/launch/footer.j2" %}
+
+</body>
+
+<script>
+ if (document.cookie.split(';').some(c => c.trim().startsWith('ses-id='))) {
+    window.location.href = "/dashboard";
+}
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+
+	<aside class="sidebar" id="sidebar">
+		<nav class="sidebar-nav">
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Main</div>
+				<a class="sidebar-item active" onclick="switchPage('dashboard')">
+					<img src="/static/icons/dash.svg" class="icon-sm sidebar-item-icon" alt="bell">
+					<span>Dashboard</span>
+				</a>
+				<a class="sidebar-item" onclick="switchPage('monitor')">
+					<img src="/static/icons/eye.svg" class="icon-sm sidebar-item-icon" alt="bell">
+					<span>Monitor</span>
+				</a>
+				<a class="sidebar-item" onclick="switchPage('comments')">
+					<img src="/static/icons/chat.svg" class="icon-sm sidebar-item-icon" alt="bell">
+					<span>Comments</span>
+				</a>
+				<a class="sidebar-item" onclick="switchPage('analytics')">
+					<div class="navbar-notifications">
+						<img src="/static/icons/alert.svg" class="icon-sm sidebar-item-icon" alt="bell">
+						<span class="notification-badge">3</span>
+					</div>
+					<span>Notifications</span>
+				</a>
+			</div>
+
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Settings</div>
+				<a class="sidebar-item" onclick="switchPage('config')">
+					<img src="/static/icons/gear.svg" class="icon-sm sidebar-item-icon" alt="bell">
+					<span>Configuration</span>
+				</a>
+				<a class="sidebar-item" onclick="switchPage('templates')">
+					<img src="/static/icons/note.svg" class="icon-sm sidebar-item-icon" alt="bell">
+					<span>Reply Templates</span>
+				</a>
+				<a class="sidebar-item" onclick="switchPage('api')">
+					<img src="/static/icons/plug.svg" class="icon-sm sidebar-item-icon" alt="bell">
+					<span>API Keys</span>
+				</a>
+			</div>
+		</nav>
+
+		<div class="sidebar-footer">
+			<div class="sidebar-profile">
+				<!-- <div class="sidebar-profile-avatar">{{ user.avatar }}</div> -->
+				<img src="/static/icons/userd.svg" class="icon-sm sidebar-item-icon" alt="bell">
+				<div class="sidebar-profile-info">
+					<div class="sidebar-profile-name">{{ user.name }}</div>
+					<div class="sidebar-profile-email">{{ user.email }}</div>
+				</div>
+			</div>
+		</div>
+	</aside>
